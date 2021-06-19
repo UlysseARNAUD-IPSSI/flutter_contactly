@@ -1,8 +1,11 @@
 import 'package:contactly/app/data/model/contact_model.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class ContactList extends StatefulWidget {
   const ContactList({Set<Contact> contacts}) : super(contacts: contacts);
+
+  final Set<Contact> contacts;
 
   @override
   _ContactListState createState() => _ContactListState();

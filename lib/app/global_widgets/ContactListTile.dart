@@ -1,4 +1,5 @@
 import 'package:contactly/app/data/model/contact_model.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class ContactListTile extends StatelessWidget {
