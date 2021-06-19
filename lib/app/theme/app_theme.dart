@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:taskly/app/theme/color_theme.dart';
+import 'package:contactly/app/theme/color_theme.dart';
 
 enum AppTheme {
   YellowLight,
