@@ -1,5 +1,3 @@
-import 'package:contactly/app/data/model/contact_model.dart';
-import 'package:contactly/app/global_widgets/ContactsList%20copy.dart';
 import 'package:contactly/app/modules/contact/views/contact_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -79,11 +77,43 @@ class HomeView extends GetView<HomeController> {
     return MaterialApp(
       title: 'Contact',
       home: Scaffold(
-          appBar: appBar,
-          // drawer: drawer,
-          floatingActionButton: floatingActionButton,
-          floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-          body: ContactList(contacts: <Contact>{Contact(firstname: 'Jean','lastname':'DUPONT',)})),
+        appBar: appBar,
+        // drawer: drawer,
+        floatingActionButton: floatingActionButton,
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+        body: ListView(
+          children: [
+            ListTile(
+              leading: Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.0),
+                  image: DecorationImage(
+                    fit: BoxFit.contain,
+                    image: NetworkImage("https://picsum.photos/100"),
+                  ),
+                ),
+              ),
+              title: Text('Two-line ListTile'),
+              subtitle: Text('Here is a second line'),
+              trailing: PopupMenuButton(
+                icon: Icon(Icons.more_vert),
+                itemBuilder: (context) => [
+                  const PopupMenuItem(
+                    value: 'edit-contact',
+                    child: Text('Modifier contact'),
+                  ),
+                  const PopupMenuItem(
+                    value: 'remove-contact',
+                    child: Text('Supprimer contact'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
