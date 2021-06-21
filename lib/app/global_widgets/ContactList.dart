@@ -15,10 +15,13 @@ class _ContactListState extends State<ContactList> {
 
   @override
   Widget build(BuildContext context) {
+    List _contacts = null != this.contacts ? this.contacts : [];
+    Iterable<ContactListTile> contacts = _contacts.map((contact) {
+      return ContactListTile(contact: contact);
+    });
+
     return ListView(
-      children: this.contacts.map((contact) {
-        return ContactListTile(contact: contact);
-      }).toList(),
+      children: null != contacts ? contacts.toList() : [],
     );
   }
 }

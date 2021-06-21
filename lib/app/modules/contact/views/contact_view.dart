@@ -4,7 +4,7 @@ import 'package:contactly/app/modules/contact/controllers/contact_controller.dar
 
 class ContactView extends GetView<ContactController> {
   final controller = Get.put(ContactController());
-  @override
+
   Widget build(BuildContext context) {
     AppBar appBar = AppBar(
       title: Text('Contact'),
@@ -15,7 +15,10 @@ class ContactView extends GetView<ContactController> {
       home: Scaffold(
         appBar: appBar,
         body: ListView(
-          children: [],
+          children: [
+            Text(controller.contact.firstname),
+            Text(controller.contact.lastname)
+          ],
         ),
       ),
     );

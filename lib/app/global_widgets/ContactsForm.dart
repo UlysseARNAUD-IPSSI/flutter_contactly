@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class ContactForm extends StatefulWidget {
-  const ContactForm({Contact contact}) : super(contact: contact);
+  const ContactForm({this.contact}) : super();
 
   final Contact contact;
 
